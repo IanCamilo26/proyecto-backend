@@ -2,14 +2,23 @@ FROM python:3.13-slim
 
 WORKDIR /app
 
-# instalar netcat para que el script wait-for-db.sh pueda verificar la base de datos
+# instalar utilidades del sistema necesarias (netcat; libpq-dev y build-essential
+# sólo si usás psycopg2 no-binary)
 RUN apt-get update \
   && apt-get install -y --no-install-recommends netcat-openbsd \
+  && python -m pip install --upgrade pip \
   && rm -rf /var/lib/apt/lists/*
 
-# copiamos únicamente el script de espera
-COPY wait-for-db.sh /wait-for-db.sh
-RUN chmod +x /wait-for-db.sh
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# comando por defecto: esperar a la base de datos
-CMD ["/wait-for-db.sh", "db:5432", "--", "echo", "PostgreSQL está listo"]
+COPY . .
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+EXPOSE 8000
+
+RUN chmod +x ./wait-for.sh
+
+CMD ["./wait-for.sh", "db:5432", "--", "sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
