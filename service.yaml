@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: users-api-service
+  namespace: proyecto-final
 spec:
   selector:
     app: users-api
