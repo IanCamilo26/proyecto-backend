@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: users-api-deployment
-  namespace: proyecto-final
+  namespace: backend
   labels:
     app: users-api
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: users-api
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: users-api
-          image: <ECR_BACKEND_IMAGE>
+          image: 617315822143.dkr.ecr.us-east-1.amazonaws.com/proyecto-backend:latest
           ports:
             - containerPort: 8000
           env:
