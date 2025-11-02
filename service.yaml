@@ -4,11 +4,10 @@ metadata:
   name: users-api-service
   namespace: backend
 spec:
-  type: Loadbalancer
   selector:
     app: users-api
   ports:
     - protocol: TCP
       port: 8000
       targetPort: 8000
-  type: ClusterIP
+  type: Loadbalancer
