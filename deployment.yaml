@@ -30,23 +30,17 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: db-secret
-                  key: host
+                  key: DB_HOST
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
                   name: db-secret
-                  key: user
+                  key: DB_USER
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: db-secret
-                  key: password
-          readinessProbe:
-            httpGet:
-              path: /api/users/
-              port: 8000
-            initialDelaySeconds: 5
-            periodSeconds: 10
+                  key: DB_PASSWORD
           resources:
             requests:
               cpu: "100m"
