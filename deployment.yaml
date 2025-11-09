@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
         - name: users-api
-          image: 617315822143.dkr.ecr.us-east-1.amazonaws.com/proyecto-backend:latest
+          image: 912119905922.dkr.ecr.us-east-1.amazonaws.com/proyecto-backend:v1.0.3
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           env:
@@ -31,6 +32,16 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_PORT
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_NAME
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
@@ -41,6 +52,37 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: DB_PASSWORD
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: SECRET_KEY
+            - name: DEBUG
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DEBUG
+            - name: ALLOWED_HOSTS
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: ALLOWED_HOSTS
+          readinessProbe:
+            httpGet:
+              path: /api/health/
+              port: 8000
+            initialDelaySeconds: 30    # Aumentado de 10 a 30
+            periodSeconds: 15          # Aumentado de 10 a 15
+            timeoutSeconds: 10         # Aumentado de 5 a 10
+            failureThreshold: 5        # Aumentado de 3 a 5
+          livenessProbe:
+            httpGet:
+              path: /api/health/
+              port: 8000
+            initialDelaySeconds: 60    # Aumentado de 30 a 60
+            periodSeconds: 30          # Aumentado de 20 a 30
+            timeoutSeconds: 10         # Aumentado de 5 a 10
+            failureThreshold: 5        # Aumentado de 3 a 5
           resources:
             requests:
               cpu: "100m"

@@ -4,4 +4,4 @@ metadata:
   name: users-api-config
   namespace: backend
 data:
-  notification_url: http://notification-service.notifications:8080/notify
+  notification_url: http://notification-service.notifications.svc.cluster.local:8080/notify
