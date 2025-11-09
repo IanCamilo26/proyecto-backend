@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',   # Terceros
     'corsheaders',   # Terceros
-    'users',   # Mi app
+    'users.apps.UsersConfig',   # Cambiamos de 'users' a 'users.apps.UsersConfig'
 ]
 
 MIDDLEWARE = [
