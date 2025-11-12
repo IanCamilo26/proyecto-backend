@@ -155,4 +155,6 @@ CORS_ALLOWED_ORIGINS = [
     # Production
     'http://a190beebda113483c8826e59c909be17-305130074.us-east-1.elb.amazonaws.com',
     'https://a190beebda113483c8826e59c909be17-305130074.us-east-1.elb.amazonaws.com',
+    'http://iancamilo-users-app.cloud-ip.cc',
+    'https://iancamilo-users-app.cloud-ip.cc',
 ]

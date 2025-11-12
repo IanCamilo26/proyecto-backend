@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: users-api
-          image: 912119905922.dkr.ecr.us-east-1.amazonaws.com/proyecto-backend:v1.0.5
+          image: 912119905922.dkr.ecr.us-east-1.amazonaws.com/proyecto-backend:v1.0.6
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
