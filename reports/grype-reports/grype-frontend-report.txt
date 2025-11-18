@@ -1,0 +1,17 @@
+NAME           INSTALLED   FIXED IN   TYPE  VULNERABILITY   SEVERITY  EPSS           RISK   
+libxml2        2.13.4-r6   2.13.9-r0  apk   CVE-2025-49796  Critical  0.3% (54th)    0.3    
+libxml2        2.13.4-r6   2.13.9-r0  apk   CVE-2025-6021   High      0.4% (58th)    0.3    
+tiff           4.7.1-r0               apk   CVE-2023-6277   Medium    0.4% (61st)    0.2    
+tiff           4.7.1-r0               apk   CVE-2023-52356  High      0.2% (45th)    0.2    
+libxml2        2.13.4-r6   2.13.9-r0  apk   CVE-2025-49794  Critical  0.2% (40th)    0.2    
+libxml2        2.13.4-r6   2.13.9-r0  apk   CVE-2025-49795  High      < 0.1% (28th)  < 0.1  
+nginx          1.28.0-r1              apk   CVE-2025-53859  Medium    0.1% (28th)    < 0.1  
+curl           8.14.1-r2              apk   CVE-2025-10966  Medium    < 0.1% (3rd)   < 0.1  
+tiff           4.7.1-r0               apk   CVE-2023-6228   Medium    < 0.1% (2nd)   < 0.1  
+busybox        1.37.0-r13             apk   CVE-2025-46394  Low       < 0.1% (1st)   < 0.1  
+busybox-binsh  1.37.0-r13             apk   CVE-2025-46394  Low       < 0.1% (1st)   < 0.1  
+ssl_client     1.37.0-r13             apk   CVE-2025-46394  Low       < 0.1% (1st)   < 0.1  
+busybox        1.37.0-r13             apk   CVE-2024-58251  Low       < 0.1% (3rd)   < 0.1  
+busybox-binsh  1.37.0-r13             apk   CVE-2024-58251  Low       < 0.1% (3rd)   < 0.1  
+ssl_client     1.37.0-r13             apk   CVE-2024-58251  Low       < 0.1% (3rd)   < 0.1  
+libxml2        2.13.4-r6   2.13.9-r0  apk   CVE-2025-6170   Low       < 0.1% (2nd)   < 0.1
